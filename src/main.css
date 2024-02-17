@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --clr-main: #c56cee;
+    --clr-main-light: #efdaf9;
+}
+
+.textList {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    padding-inline: 1.5rem;
+    margin: 0 auto;
+}
+
+.main-title {
+    margin-top: 2rem;
+}
+
+.navbar {
+    padding: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #252525;
+    border-bottom: 1px solid #FDC648;
+    position: relative; 
+}
+
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    right: 45%;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-grow: 1; 
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-block: 2rem;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: solid 1px grey;
+}
+
+.producto > div {
+    padding: 1rem;
+    background-color: rgba(169, 167, 167, 0.46);
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    width: 100%;
+    align-items: center;
+}
+
+.producto > img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.producto .ver-mas {
+    text-decoration: none;
+    background-color: #272424;
+    color: rgb(255, 255, 255);
+    padding: .4rem;
+    width: max-content;
+    border-radius: .2rem;
+    transition: 0.4s;
+}
+
+.producto .ver-mas:hover {
+    background-color: rgb(238, 100, 21);
+    color: white;
+}
+
+.producto-detalle {
+    padding-block: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+}
+
+.producto-detalle img {
+    width: 100%;
+}
+
+.producto-detalle-info h3 {
+    font-size: 2rem;
+}
+
+.precio {
+    font-size: 2rem;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.item-count {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.item-count button, .agregar-al-carrito, .enviar {
+    background-color: rgb(236, 116, 12);
+    border: 0;
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    transition: .2s;
+}
+
+.item-count button:hover, .agregar-al-carrito:hover, .enviar:hover {
+    background-color: white;
+    color: black;
+}
+
+.agregar-al-carrito, .enviar {
+    width: auto;
+    height: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: flex-start;
+}
+
+.formulario input {
+    padding: .5rem;
+    width: 18rem;
+    border-radius: .5rem;
+    border: 2px solid black;
+}
+
+.formulario input:focus {
+    outline: 0;
+    border: 2px solid var(--clr-main);
+    outline: 2px solid var(--clr-main);
+}
+
+.card-widget {
+    margin-left: auto; 
+}
+
+.botoncarrito {
+    position: relative; 
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+
+.numerito {
+    position: absolute;
+    top: -14px;
+    right: -11px;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 10px;
+}
+
+.botonfinalizar {
+    background-color: rgb(236, 116, 12);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 2rem;
+}
+
+.botonfinalizar:hover {
+    background-color: rgb(189, 114, 9);
+    color: rgb(255, 255, 255);
+}
+
+.lineaparadividircampos {
+    border-top: 2px solid #ccc;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+@media (max-width: 600px) {
+    .toggle-button {
+        display: flex; 
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        background-color: #252525;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .menu.show {
+        display: flex; 
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu-link {
+        font-size: 1.5rem;
+    }
+
+    .productos {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        padding-block: 1rem;
+    }
+}
+
+.banner img {
+    width: 100%;
+}
+
+
+.imgdecarrito {
+    max-width: 100px;
+  }
+
+  .containercarrito {
+    max-width: 400px; 
+    padding: 20px;
+  }
